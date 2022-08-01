@@ -1,10 +1,29 @@
+@font-face {
+    font-family: 'KumbhSans-Bold';
+    src: url('../../public/fonts/KumbhSans-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'KumbhSans-Regular';
+    src: url('../../public/fonts/KumbhSans-Regular.ttf');
+}
+
 .header{
     height: 84px;
     border-bottom: 1px solid #E4E9F2;
 }
 
-.header_nav{
+.header__menu{
     height: 50px;
+}
 
+.header__menu__left{
+    height: 100%;
+    width: 137.5px;
+}
+
+.header__menu__left__links{
+    font-family: 'KumbhSans-Regular';
+    list-style-type: none;
 
 }
