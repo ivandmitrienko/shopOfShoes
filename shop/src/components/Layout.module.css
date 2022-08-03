@@ -18,12 +18,21 @@
 }
 
 .header__menu__left{
-    height: 100%;
-    width: 137.5px;
+    height: 26px;
+    width: 591px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.header__menu__left__links{
-    font-family: 'KumbhSans-Regular';
-    list-style-type: none;
-
+.header__menu__left__links>a{
+    font-family: 'KumbhSans-Regular'; 
+    color: #69707D;
+    font-size: 15px;
+    text-decoration: none;
 }
+
+.header__menu__left__links>a:not(:last-child){
+   margin-right: 33px;
+}
+
