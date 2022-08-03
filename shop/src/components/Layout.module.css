@@ -9,12 +9,16 @@
 }
 
 .header{
-    height: 84px;
+    height: 80px;
     border-bottom: 1px solid #E4E9F2;
+    padding: 12px 0;
 }
 
 .header__menu{
     height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .header__menu__left{
@@ -27,12 +31,15 @@
 
 .header__menu__left__links>a{
     font-family: 'KumbhSans-Regular'; 
-    color: #69707D;
     font-size: 15px;
     text-decoration: none;
+    padding-bottom: 10%;
 }
 
 .header__menu__left__links>a:not(:last-child){
    margin-right: 33px;
 }
 
+.header__menu__left__links>a:hover{
+   border-bottom: 4px solid #FF7E1B;
+}

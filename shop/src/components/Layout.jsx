@@ -1,9 +1,13 @@
 import React, { PureComponent } from 'react';
 import { NavLink, Outlet} from "react-router-dom";
 import style from './Layout.module.css';
+import { AiOutlineShoppingCart } from 'react-icons/ai';
 
 export default class Layout extends PureComponent {
   render() {
+
+    const {isActive}=this.props;
+
     return (
       <>
         <div className={style.header}>
@@ -11,15 +15,16 @@ export default class Layout extends PureComponent {
               <div className={style.header__menu__left}>
                 <img src="imgs/sneakers 2.svg" alt="sneakers" />
                 <div className={style.header__menu__left__links}>
-                  <NavLink to="/Collections">Collections</NavLink>
-                  <NavLink to="/Men">Men</NavLink>
-                  <NavLink to="/Women">Women</NavLink>
-                  <NavLink to="/About">About</NavLink>
-                  <NavLink to="/Contact">Contact</NavLink>
+                  <NavLink to="/Collections" style={isActive}>Collections</NavLink>
+                  <NavLink to="/Men" style={isActive}>Men</NavLink>
+                  <NavLink to="/Women" style={isActive}>Women</NavLink>
+                  <NavLink to="/About" style={isActive}>About</NavLink>
+                  <NavLink to="/Contact" style={isActive}>Contact</NavLink>
                 </div>
               </div>
               <div>
-                {/* <Basket /> */}
+                <AiOutlineShoppingCart size={25} color='#69707D'/>
+                <img src="imgs/Oval.svg" alt="" />
               </div>
             </div>
         </div>
