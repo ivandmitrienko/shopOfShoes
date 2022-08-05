@@ -1,9 +1,12 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react';
 
-export default class Homepage extends Component {
+export default class Homepage extends PureComponent {
   render() {
+
+    const {images} = this.props;
+
     return (
-      <div>Homepage</div>
+      <div>{images.map((image)=>{return <img src={image} alt='' />})}</div>
     )
   }
 }

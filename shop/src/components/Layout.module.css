@@ -12,6 +12,7 @@
     height: 80px;
     border-bottom: 1px solid #E4E9F2;
     padding: 12px 0;
+    margin-bottom: 90px;   
 }
 
 .header__menu{
@@ -29,11 +30,16 @@
     justify-content: space-between;
 }
 
+.header__menu__right{
+    display: flex;
+    align-items: center;
+}
+
 .header__menu__left__links>a{
     font-family: 'KumbhSans-Regular'; 
     font-size: 15px;
     text-decoration: none;
-    padding-bottom: 10%;
+    padding-bottom: 7%;
 }
 
 .header__menu__left__links>a:not(:last-child){

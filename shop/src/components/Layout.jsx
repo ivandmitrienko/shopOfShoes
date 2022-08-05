@@ -13,7 +13,7 @@ export default class Layout extends PureComponent {
         <div className={style.header}>
             <div className={style.header__menu}>
               <div className={style.header__menu__left}>
-                <img src="imgs/sneakers 2.svg" alt="sneakers" />
+                <img src="images/sneakers 2.svg" alt="sneakers" />
                 <div className={style.header__menu__left__links}>
                   <NavLink to="/Collections" style={isActive}>Collections</NavLink>
                   <NavLink to="/Men" style={isActive}>Men</NavLink>
@@ -22,9 +22,9 @@ export default class Layout extends PureComponent {
                   <NavLink to="/Contact" style={isActive}>Contact</NavLink>
                 </div>
               </div>
-              <div>
-                <AiOutlineShoppingCart size={25} color='#69707D'/>
-                <img src="imgs/Oval.svg" alt="" />
+              <div className={style.header__menu__right}>
+                <AiOutlineShoppingCart size={25} color='#69707D' style={{marginRight:'46px'}}/>
+                <img src="images/Oval.svg" alt="" />
               </div>
             </div>
         </div>
