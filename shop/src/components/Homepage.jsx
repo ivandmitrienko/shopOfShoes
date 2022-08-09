@@ -1,12 +1,15 @@
 import React, { PureComponent } from 'react';
+import Lightbox from './Lightbox';
+import style from './Homepage.module.css';
 
 export default class Homepage extends PureComponent {
   render() {
 
-    const {images} = this.props;
-
     return (
-      <div>{images.map((image)=>{return <img src={image} alt='' />})}</div>
+      <div className={style.content}>
+        <Lightbox {...this.props}/>
+       
+      </div>
     )
   }
 }

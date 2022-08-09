@@ -1,0 +1,33 @@
+.lightbox{
+    width: 445px;
+}
+
+.lightbox__img{
+    width: 100%;
+    height: 445px;
+    margin-bottom: 32px;
+}
+
+.lightbox__img>img{
+    width: 100%;
+    height: 100%;
+}
+
+.lightbox__menu{
+    width: 100%;
+}
+
+.lightbox__menu > img{
+    height: 88px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.lightbox__menu > img:hover{
+   opacity: 0.75;
+   outline: 2px solid #FF7E1B;
+}
+
+.lightbox__menu > img:not(:last-child){
+    margin-right: 31px;
+}

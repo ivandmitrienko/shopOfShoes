@@ -4,6 +4,7 @@ import style from './Layout.module.css';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 
 export default class Layout extends PureComponent {
+
   render() {
 
     const {isActive}=this.props;
