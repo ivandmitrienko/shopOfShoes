@@ -12,10 +12,12 @@ export default class App extends PureComponent {
 
     this.navActive = this.navActive.bind(this);
     this.setImage = this.setImage.bind(this);
+    this.showDisplayLightBox = this.showDisplayLightBox.bind(this);
 
     this.state = {
       activeIndex: null,
       activeImg: 0,
+      lightBoxDisplay: false,
     };
 
   }
@@ -24,12 +26,16 @@ export default class App extends PureComponent {
 
   setImage = (image) => {this.setState({activeImg:image})};
 
+  showDisplayLightBox = () => {this.setState({lightBoxDisplay: true})};
+
   componentDidMount = () => {
     imageEvents.addListener('EsetImage', this.setImage);
+    imageEvents.addListener('EshowDisplayLightBox', this.showDisplayLightBox);
   }
 
   componentWillUnmount = () => {
     imageEvents.removeListener('EsetImage', this.setImage);
+    imageEvents.removeListener('EshowDisplayLightBox', this.showDisplayLightBox);
   }
 
   render() {
@@ -43,6 +49,7 @@ export default class App extends PureComponent {
                 images={this.props.images}
                 activeImg={this.state.activeImg}
                 activeIndex={this.state.activeIndex}
+                lightBoxDisplay = {this.state.lightBoxDisplay}
               />}
             />
             <Route path="/Collections" element={<h1>not available</h1>} />

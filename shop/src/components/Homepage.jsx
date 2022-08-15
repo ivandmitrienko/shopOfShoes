@@ -7,8 +7,7 @@ export default class Homepage extends PureComponent {
 
     return (
       <div className={style.content}>
-        <Lightbox {...this.props}/>
-       
+        <Lightbox {...this.props}/>       
       </div>
     )
   }
