@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react';
 import { imageEvents } from './events';
-import {Logo} from '../../public/images/Combined Shape.svg';
 import style from './Lightbox.module.css';
 
 export default class Lightbox extends PureComponent {
@@ -13,7 +12,7 @@ export default class Lightbox extends PureComponent {
     imageEvents.emit('EshowDisplayLightBox', true);
   }
 
-  render() {
+  render() { 
 
     const { images, activeImg, lightBoxDisplay } = this.props;
     const setImage = <img src={images[activeImg]} alt='' />;
@@ -39,7 +38,7 @@ export default class Lightbox extends PureComponent {
         {lightBoxDisplay && <div className={style.lightBoxDisplay}>
           <div className={style.showLightBox}>
             <div className={style.setImage}>
-              <div className={style.cross}><img src={Logo} alt="" /></div>
+              <div className={style.cross}></div>
               {setImage}
             </div>
             <div className={style.imagesNav}>{inmagesNav}</div>
