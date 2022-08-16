@@ -26,7 +26,7 @@ export default class App extends PureComponent {
 
   setImage = (image) => {this.setState({activeImg:image})};
 
-  showDisplayLightBox = () => {this.setState({lightBoxDisplay: true})};
+  showDisplayLightBox = () => {this.setState({lightBoxDisplay: !this.state.lightBoxDisplay})};
 
   componentDidMount = () => {
     imageEvents.addListener('EsetImage', this.setImage);

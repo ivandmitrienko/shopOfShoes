@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { imageEvents } from './events';
-import {like} from './icons/Combined Shape.svg';
+import { ReactComponent as Cross }   from './icons/Combined Shape.svg';
 import style from './Lightbox.module.css';
 
 export default class Lightbox extends PureComponent {
@@ -11,6 +11,10 @@ export default class Lightbox extends PureComponent {
 
   setLightBox = () => {
     imageEvents.emit('EshowDisplayLightBox', true);
+  }
+
+  closeLightBox = () =>{
+    imageEvents.emit('EshowDisplayLightBox', false);
   }
 
   render() { 
@@ -39,7 +43,7 @@ export default class Lightbox extends PureComponent {
         {lightBoxDisplay && <div className={style.lightBoxDisplay}>
           <div className={style.showLightBox}>
             <div className={style.setImage}>
-              <div className={style.cross}><img src={like} alt="" /></div>
+              <div className={style.cross}><Cross fill='#FFFFFF' onClick={this.closeLightBox} /></div>
               {setImage}
             </div>
             <div className={style.imagesNav}>{inmagesNav}</div>
