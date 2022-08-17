@@ -13,6 +13,8 @@ export default class App extends PureComponent {
     this.navActive = this.navActive.bind(this);
     this.setImage = this.setImage.bind(this);
     this.showDisplayLightBox = this.showDisplayLightBox.bind(this);
+    this.showNLeftNextImage = this.showNLeftNextImage.bind(this);
+    this.showNRightNextImage = this.showNRightNextImage.bind(this);
 
     this.state = {
       activeIndex: null,
@@ -24,18 +26,33 @@ export default class App extends PureComponent {
 
   navActive = ({ isActive }) => ({ color: isActive ? '#1D2026' : '#69707D' });
 
-  setImage = (index) => {this.setState({activeImg:index})};
+  setImage = (index) => { this.setState({ activeImg: index }) };
 
-  showDisplayLightBox = () => {this.setState({lightBoxDisplay: !this.state.lightBoxDisplay})};
+  showDisplayLightBox = () => { this.setState({ lightBoxDisplay: !this.state.lightBoxDisplay }) };
+
+  showNLeftNextImage = () => {
+    if(this.state.activeImg!==0)
+    this.setState({ activeImg: this.state.activeImg-1 })
+  }
+
+  showNRightNextImage = () => {
+    if(this.state.activeImg!==3)
+    this.setState({ activeImg: this.state.activeImg+1 })
+  }
+
 
   componentDidMount = () => {
     imageEvents.addListener('EsetImage', this.setImage);
     imageEvents.addListener('EshowDisplayLightBox', this.showDisplayLightBox);
+    imageEvents.addListener('EshowNLeftNextImage', this.showNLeftNextImage);
+    imageEvents.addListener('EshowNRightNextImage', this.showNRightNextImage);
   }
 
   componentWillUnmount = () => {
     imageEvents.removeListener('EsetImage', this.setImage);
     imageEvents.removeListener('EshowDisplayLightBox', this.showDisplayLightBox);
+    imageEvents.removeListener('EshowNLeftNextImage', this.showNLeftNextImage);
+    imageEvents.removeListener('EshowNRightNextImage', this.showNRightNextImage);
   }
 
   render() {
@@ -49,7 +66,7 @@ export default class App extends PureComponent {
                 images={this.props.images}
                 activeImg={this.state.activeImg}
                 activeIndex={this.state.activeIndex}
-                lightBoxDisplay = {this.state.lightBoxDisplay}
+                lightBoxDisplay={this.state.lightBoxDisplay}
               />}
             />
             <Route path="/Collections" element={<h1>not available</h1>} />
