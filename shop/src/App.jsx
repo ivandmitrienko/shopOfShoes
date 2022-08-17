@@ -24,7 +24,7 @@ export default class App extends PureComponent {
 
   navActive = ({ isActive }) => ({ color: isActive ? '#1D2026' : '#69707D' });
 
-  setImage = (image) => {this.setState({activeImg:image})};
+  setImage = (index) => {this.setState({activeImg:index})};
 
   showDisplayLightBox = () => {this.setState({lightBoxDisplay: !this.state.lightBoxDisplay})};
 

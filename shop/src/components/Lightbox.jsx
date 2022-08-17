@@ -1,7 +1,9 @@
 import React, { PureComponent } from 'react';
 import { imageEvents } from './events';
-import { ReactComponent as Cross }   from './icons/Combined Shape.svg';
+import { ReactComponent as Cross } from './icons/Combined Shape.svg';
+import { ReactComponent as Button } from './icons/Group 18.svg';
 import style from './Lightbox.module.css';
+
 
 export default class Lightbox extends PureComponent {
 
@@ -10,14 +12,18 @@ export default class Lightbox extends PureComponent {
   }
 
   setLightBox = () => {
-    imageEvents.emit('EshowDisplayLightBox', true);
+    imageEvents.emit('EshowDisplayLightBox');
   }
 
-  closeLightBox = () =>{
-    imageEvents.emit('EshowDisplayLightBox', false);
+  LeftNextImage = () => {
+    imageEvents.emit('EshowNLeftNextImage');
   }
 
-  render() { 
+  RightNextImage = () =>{
+    imageEvents.emit('EshowNRightNextImage');
+  }
+
+  render() {
 
     const { images, activeImg, lightBoxDisplay } = this.props;
     const setImage = <img src={images[activeImg]} alt='' />;
@@ -43,7 +49,11 @@ export default class Lightbox extends PureComponent {
         {lightBoxDisplay && <div className={style.lightBoxDisplay}>
           <div className={style.showLightBox}>
             <div className={style.setImage}>
-              <div className={style.cross}><Cross fill='#FFFFFF' onClick={this.closeLightBox} /></div>
+              <div className={style.cross}><Cross fill='#FFFFFF' onClick={this.setLightBox} /></div>
+              <div className={style.buttonOfLightbox}><Button className={style.stroke} onClick = {this.LeftNextImage}/></div>
+              <div className={style.buttonOfLightbox} style={{ left: '100%', transform: 'translate(-50%,-100%) rotate(0deg)' }}>
+                <Button className={style.stroke} onClick = {this.RightNextImage}/>
+              </div>
               {setImage}
             </div>
             <div className={style.imagesNav}>{inmagesNav}</div>
