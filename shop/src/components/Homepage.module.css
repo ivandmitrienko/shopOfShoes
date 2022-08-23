@@ -1,5 +1,7 @@
 .content{
+    display: flex;
     width: 1015px;
     height: 565px;
     margin: 0 auto;
 }
+

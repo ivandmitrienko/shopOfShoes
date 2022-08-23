@@ -1,13 +1,3 @@
-@font-face {
-    font-family: 'KumbhSans-Bold';
-    src: url('../../public/fonts/KumbhSans-Bold.ttf');
-}
-
-@font-face {
-    font-family: 'KumbhSans-Regular';
-    src: url('../../public/fonts/KumbhSans-Regular.ttf');
-}
-
 .header{
     height: 80px;
     border-bottom: 1px solid #E4E9F2;

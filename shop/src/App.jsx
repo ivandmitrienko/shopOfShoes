@@ -36,7 +36,7 @@ export default class App extends PureComponent {
   }
 
   showNRightNextImage = () => {
-    if(this.state.activeImg!==3)
+    if(this.state.activeImg!==this.props.images.length-1)
     this.setState({ activeImg: this.state.activeImg+1 })
   }
 
