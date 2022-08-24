@@ -85,14 +85,6 @@
     transform: translate(-50%,-100%) rotate(180deg);
 }
 
-/* .buttonOfLightboxRight{
-    position: absolute;
-    cursor: pointer;
-    top: 303px;
-    left:100%;
-    transform: translate(-50%,-100%)
-} */
-
 .stroke:hover path{
     stroke: #FF7E1B;
 }

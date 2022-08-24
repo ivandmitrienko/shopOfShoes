@@ -19,7 +19,7 @@ export default class UserBox extends PureComponent {
           <div className={style.priceWITHOUTdiscount}>$250.00</div>
         </div>
         <>
-        <Order />
+        <Order {...this.props}/>
         </>
       </div>
     )

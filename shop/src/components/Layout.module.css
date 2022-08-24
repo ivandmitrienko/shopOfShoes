@@ -21,6 +21,7 @@
 }
 
 .header__menu__right{
+    position: relative;
     display: flex;
     align-items: center;
 }
@@ -29,7 +30,7 @@
     font-family: 'KumbhSans-Regular'; 
     font-size: 15px;
     text-decoration: none;
-    padding-bottom: 7%;
+    padding-bottom: 7.2%;
 }
 
 .header__menu__left__links>a:not(:last-child){
@@ -39,3 +40,23 @@
 .header__menu__left__links>a:hover{
    border-bottom: 4px solid #FF7E1B;
 }
+
+
+.quantity{
+    position: absolute;
+    display: flex;
+    padding-top: 1px;
+    justify-content: center;
+    align-items: center;
+    font-family: 'KumbhSans-Bold';
+    width: 19px;
+    height: 13px;
+    bottom: 50%;
+    left: 12%;
+    background: #FF7E1B;
+    border-radius: 6.5px;
+    font-size: 10px;
+    color: #FFFFFF;
+
+}
+
