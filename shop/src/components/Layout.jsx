@@ -11,9 +11,9 @@ export default class Layout extends PureComponent {
     imageEvents.emit('EshowDisplayCart');
   }
 
-  deleteCartHover= () => {
-    imageEvents.emit('EhideDisplayCart');
-  }
+  // deleteCartHover= () => {
+  //   imageEvents.emit('EhideDisplayCart');
+  // }
 
   render() {
 
@@ -37,7 +37,6 @@ export default class Layout extends PureComponent {
               <AiOutlineShoppingCart
                 className='iconCart'
                 onMouseEnter={this.cartHover}
-                onMouseLeave={this.deleteCartHover}
                 size={25} color='#69707D'
                 style={{ marginRight: '46px', cursor:'pointer' }}
               />
