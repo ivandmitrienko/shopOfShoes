@@ -17,6 +17,8 @@ export default class App extends PureComponent {
     this.showNRightNextImage = this.showNRightNextImage.bind(this);
     this.setLess = this.setLess.bind(this);
     this.setMore = this.setMore.bind(this);
+    this.showCart = this.showCart.bind(this);
+    this.deleteCartHover = this.deleteCartHover.bind(this);
 
     this.state = {
       activeIndex: null,
@@ -25,6 +27,18 @@ export default class App extends PureComponent {
       quantity: 0,
     };
 
+  }
+
+  
+
+  showCart = () => {
+    const elem = document.getElementsByClassName('Cart_cart__yr3-o');
+    elem[0].style.display = 'block';
+  }
+
+  deleteCartHover = () => {
+    const elem = document.getElementsByClassName('Cart_cart__yr3-o');
+    elem[0].style.display = 'none';
   }
 
   navActive = ({ isActive }) => ({ color: isActive ? '#1D2026' : '#69707D' });
@@ -59,6 +73,8 @@ export default class App extends PureComponent {
     imageEvents.addListener('EshowNRightNextImage', this.showNRightNextImage);
     imageEvents.addListener('EsetLess', this.setLess);
     imageEvents.addListener('EsetMore', this.setMore);
+    imageEvents.addListener('EshowDisplayCart', this.showCart);
+    imageEvents.addListener('EhideDisplayCart', this.deleteCartHover);
   }
 
   componentWillUnmount = () => {
@@ -68,6 +84,8 @@ export default class App extends PureComponent {
     imageEvents.removeListener('EshowNRightNextImage', this.showNRightNextImage);
     imageEvents.removeListener('EsetLess', this.setLess);
     imageEvents.removeListener('EsetMore', this.setMore);
+    imageEvents.removeListener('EshowDisplayCart', this.showCart);
+    imageEvents.removeListener('EhideDisplayCart', this.deleteCartHover);
   }
 
   render() {
@@ -75,7 +93,7 @@ export default class App extends PureComponent {
     return (
       <div className={style.App}>
         <Routes>
-          <Route path="/" element={<Layout isActive={this.navActive} quantity={this.state.quantity}/>}>
+          <Route path="/" element={<Layout isActive={this.navActive} quantity={this.state.quantity} />}>
             <Route index
               element={<Homepage
                 images={this.props.images}
