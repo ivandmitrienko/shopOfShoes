@@ -29,12 +29,9 @@ export default class App extends PureComponent {
 
   }
 
-  
-
   showCart = () => {
     const elem = document.getElementsByClassName('Cart_cart__yr3-o');
     elem[0].style.display = 'block';
-    setTimeout(()=>{if(elem.onMouseEnter) elem[0].style.display = 'none'},2000)
   }
 
   deleteCartHover = () => {

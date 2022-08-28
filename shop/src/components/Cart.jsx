@@ -11,6 +11,7 @@ export default class Cart extends PureComponent {
     render() {
         return (
             <div onMouseLeave={this.deleteCartHover} className={style.cart}>
+                <div className={style.mouseLeave}>ni</div>
                 <div className={style.cart__header}>
                     Cart
                 </div>

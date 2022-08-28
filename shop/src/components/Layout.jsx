@@ -11,10 +11,6 @@ export default class Layout extends PureComponent {
     imageEvents.emit('EshowDisplayCart');
   }
 
-  // deleteCartHover= () => {
-  //   imageEvents.emit('EhideDisplayCart');
-  // }
-
   render() {
 
     const { isActive, quantity } = this.props;

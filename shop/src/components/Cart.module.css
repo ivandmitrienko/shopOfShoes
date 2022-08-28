@@ -22,3 +22,11 @@
 .cart__order{
     height: 188px;
 }
+
+.mouseLeave{
+    position: absolute;
+    height: 150px;
+    width: 360px;
+    visibility: visible;
+    top: -150px;
+}
