@@ -1,9 +1,10 @@
 import React, { PureComponent } from 'react';
 import { NavLink, Outlet } from "react-router-dom";
-import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { imageEvents } from './events';
-import CartMenu from './CartMenu';
+import { AiOutlineShoppingCart } from 'react-icons/ai';
+import Cart from './Cart';
 import style from './Layout.module.css';
+
 
 export default class Layout extends PureComponent {
 
@@ -13,7 +14,7 @@ export default class Layout extends PureComponent {
 
   render() {
 
-    const { isActive, quantity } = this.props;
+    const { isActive } = this.props;
 
     return (
       <>
@@ -30,17 +31,11 @@ export default class Layout extends PureComponent {
               </div>
             </div>
             <div className={style.header__menu__right}>
-              <AiOutlineShoppingCart
-                className='iconCart'
-                onMouseEnter={this.cartHover}
-                size={25} color='#69707D'
-                style={{ marginRight: '46px', cursor:'pointer' }}
-              />
-              {quantity ? <div className={style.quantity}>{quantity}</div> : null}
+              <AiOutlineShoppingCart size={25} color='#69707D' style={{marginRight:'46px'}}/>
               <img src="images/Oval.svg" alt="" />
             </div>
           </div>
-          <CartMenu/>
+          <Cart/>
         </div>
         <Outlet />
       </>
