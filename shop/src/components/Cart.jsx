@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import { imageEvents } from './events';
 import style from './Cart.module.css';
 
-export default class CartMenu extends PureComponent {
+export default class Cart extends PureComponent {
 
     deleteCartHover = () => {
         imageEvents.emit('EhideDisplayCart');

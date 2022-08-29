@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import { NavLink, Outlet } from "react-router-dom";
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { imageEvents } from './events';
-import CartMenu from './Cart_menu';
+import CartMenu from './CartMenu';
 import style from './Layout.module.css';
 
 export default class Layout extends PureComponent {
