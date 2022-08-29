@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import { NavLink, Outlet } from "react-router-dom";
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { imageEvents } from './events';
-import Cart from './Cart';
+import CartMenu from './Cart_menu';
 import style from './Layout.module.css';
 
 export default class Layout extends PureComponent {
@@ -40,7 +40,7 @@ export default class Layout extends PureComponent {
               <img src="images/Oval.svg" alt="" />
             </div>
           </div>
-          <Cart />
+          <CartMenu/>
         </div>
         <Outlet />
       </>
