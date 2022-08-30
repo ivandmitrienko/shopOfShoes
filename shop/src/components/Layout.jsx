@@ -1,20 +1,14 @@
 import React, { PureComponent } from 'react';
 import { NavLink, Outlet } from "react-router-dom";
-import { imageEvents } from './events';
-import { AiOutlineShoppingCart } from 'react-icons/ai';
 import Cart from './Cart';
 import style from './Layout.module.css';
 
 
 export default class Layout extends PureComponent {
 
-  cartHover = () => {
-    imageEvents.emit('EshowDisplayCart');
-  }
-
   render() {
 
-    const { isActive } = this.props;
+    const { isActive, quantity, cartMenu } = this.props;
 
     return (
       <>
@@ -31,11 +25,10 @@ export default class Layout extends PureComponent {
               </div>
             </div>
             <div className={style.header__menu__right}>
-              <AiOutlineShoppingCart size={25} color='#69707D' style={{marginRight:'46px'}}/>
+              <Cart quantity={quantity} cartMenu={cartMenu} />
               <img src="images/Oval.svg" alt="" />
             </div>
           </div>
-          <Cart/>
         </div>
         <Outlet />
       </>

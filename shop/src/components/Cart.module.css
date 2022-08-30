@@ -1,8 +1,11 @@
 .cart{
-    display: none;
+    position: relative;
+}
+
+.cart__menu{
     position: absolute;
-    right: 287px;
-    top: 94px;
+    right: -119px;
+    top: 43px;
     width: 360px;
     height: 256px;
     background: #FFFFFF;
@@ -22,3 +25,22 @@
 .cart__order{
     height: 188px;
 }
+
+.quantity{
+    position: absolute;
+    display: flex;
+    padding-top: 1px;
+    justify-content: center;
+    align-items: center;
+    font-family: 'KumbhSans-Bold';
+    width: 19px;
+    height: 13px;
+    bottom: 50%;
+    left: 12%;
+    background: #FF7E1B;
+    border-radius: 6.5px;
+    font-size: 10px;
+    color: #FFFFFF;
+
+}
+
