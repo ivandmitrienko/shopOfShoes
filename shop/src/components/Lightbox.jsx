@@ -1,11 +1,19 @@
 import React, { PureComponent } from 'react';
 import { imageEvents } from './events';
+import { images } from './images.js';
 import { ReactComponent as Cross } from './icons/Combined Shape.svg';
 import { ReactComponent as Button } from './icons/Group 18.svg';
 import style from './Lightbox.module.css';
 
 
 export default class Lightbox extends PureComponent {
+
+  constructor(props){
+    super(props);
+    this.state= {
+
+    }
+  }
 
   setImage = (index) => {
     imageEvents.emit('EsetImage', index);
@@ -25,7 +33,7 @@ export default class Lightbox extends PureComponent {
 
   render() {
 
-    const { images, activeImg, lightBoxDisplay } = this.props;
+    const {activeImg, lightBoxDisplay } = this.props;
     const setImage = <img src={images[activeImg]} alt='' />;
     const inmagesNav = <div className={style.lightbox__menu}>
       {images.map((image, index) => {
