@@ -17,25 +17,15 @@ export default class App extends PureComponent {
     this.showNRightNextImage = this.showNRightNextImage.bind(this);
     this.setLess = this.setLess.bind(this);
     this.setMore = this.setMore.bind(this);
-    this.cartHover = this.cartHover.bind(this);
-    this.cartHide = this.cartHide.bind(this);
-    this.cartMenuHover = this.cartMenuHover.bind(this);
-
+  
     this.state = {
       activeIndex: null,
       activeImg: 0,
       lightBoxDisplay: false,
       quantity: 0,
-      cartMenu: 'none',
     };
 
   }
-
-  cartHover = () => { this.setState({ cartMenu: 'block' }) };
-
-  cartHide = () => setTimeout(() => { this.setState({ cartMenu: 'none' }) }, 2000);
-
-  cartMenuHover = () => clearTimeout(this.cartHide);
 
   navActive = ({ isActive }) => ({ color: isActive ? '#1D2026' : '#69707D' });
 
@@ -69,9 +59,6 @@ export default class App extends PureComponent {
     imageEvents.addListener('EshowNRightNextImage', this.showNRightNextImage);
     imageEvents.addListener('EsetLess', this.setLess);
     imageEvents.addListener('EsetMore', this.setMore);
-    imageEvents.addListener('EcartHover', this.cartHover);
-    imageEvents.addListener('EcartHide', this.cartHide);
-    imageEvents.addListener('EcartMenuHover', this.cartMenuHover);
   }
 
   componentWillUnmount = () => {
@@ -81,9 +68,6 @@ export default class App extends PureComponent {
     imageEvents.removeListener('EshowNRightNextImage', this.showNRightNextImage);
     imageEvents.removeListener('EsetLess', this.setLess);
     imageEvents.removeListener('EsetMore', this.setMore);
-    imageEvents.removeListener('EcartHover', this.cartHover);
-    imageEvents.removeListener('EcartHide', this.cartHide);
-    imageEvents.removeListener('EcartMenuHover', this.cartMenuHover);
   }
 
   render() {
@@ -96,7 +80,6 @@ export default class App extends PureComponent {
             element={<Layout
               isActive={this.navActive}
               quantity={this.state.quantity}
-              cartMenu={this.state.cartMenu}
             />}>
             <Route index
               element={<Homepage
