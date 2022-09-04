@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import Lightbox from './Lightbox';
+import Slider from './Slider';
 import UserBox from './UserBox';
 import style from './Homepage.module.css';
 
@@ -9,7 +9,7 @@ export default class Homepage extends PureComponent {
     return (
       <div className={style.content}>
         <>
-          <Lightbox {...this.props}/> 
+          <Slider {...this.props}/> 
         </>
         <>
           <UserBox  {...this.props}/> 

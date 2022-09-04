@@ -1,45 +1,43 @@
 import React, { PureComponent } from 'react';
-import { imageEvents } from './events';
 import { images } from './images.js';
 import { ReactComponent as Cross } from './icons/Combined Shape.svg';
 import { ReactComponent as Button } from './icons/Group 18.svg';
-import style from './Lightbox.module.css';
+import style from 'Slider.module.css';
 
 
-export default class Lightbox extends PureComponent {
+export default class Slider extends PureComponent {
 
   constructor(props){
     super(props);
-    this.state= {
 
+    this.state= {
+      activeImg: 0,
+      lightBoxDisplay: false,
+      activeImgLightBox: 0,
     }
   }
 
-  setImage = (index) => {
-    imageEvents.emit('EsetImage', index);
+  setImage = (index) => { this.setState({ activeImg: index }) };
+
+  setLightBox = () => { this.setState({ lightBoxDisplay: !this.state.lightBoxDisplay }) };
+
+  LeftNextImage =  () => {
+    if (this.state.activeImg !== 0)
+    this.setState({ activeImg: this.state.activeImg - 1 });
   }
 
-  setLightBox = () => {
-    imageEvents.emit('EshowDisplayLightBox');
-  }
-
-  LeftNextImage = () => {
-    imageEvents.emit('EshowNLeftNextImage');
-  }
-
-  RightNextImage = () =>{
-    imageEvents.emit('EshowNRightNextImage');
+  RightNextImage = () => {
+    if (this.state.activeImg !== images.length - 1)
+      this.setState({ activeImg: this.state.activeImg + 1 });
   }
 
   render() {
-
-    const {activeImg, lightBoxDisplay } = this.props;
-    const setImage = <img src={images[activeImg]} alt='' />;
+    const setImage = <img src={images[this.state.activeImg]} alt='' />;
     const inmagesNav = <div className={style.lightbox__menu}>
       {images.map((image, index) => {
         return <img
           src={image}
-          className={activeImg === index ? style.imageActive : ''}
+          className={this.state.activeImg === index ? style.imageActive : ''}
           alt=''
           key={image}
           onClick={() => this.setImage(index)} />
@@ -51,10 +49,10 @@ export default class Lightbox extends PureComponent {
     return (
       <div className={style.lightbox}>
         <div className={style.lightbox__img}>
-          {<img src={images[activeImg]} alt='' onClick={this.setLightBox} />}
+          {<img src={images[this.state.activeImg]} alt='' onClick={this.setLightBox} />}
         </div>
         {inmagesNav}
-        {lightBoxDisplay && <div className={style.lightBoxDisplay}>
+        {this.state.lightBoxDisplay && <div className={style.lightBoxDisplay}>
           <div className={style.showLightBox}>
             <div className={style.setImage}>
               <div className={style.cross}><Cross fill='#FFFFFF' onClick={this.setLightBox} /></div>
