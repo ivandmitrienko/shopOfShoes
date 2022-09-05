@@ -1,91 +1,16 @@
-.lightbox{
+.slider{
     width: 445px;
 }
 
-.lightbox__img{
+.slider__img{
     width: 100%;
     height: 445px;
     margin-bottom: 32px;
     cursor: pointer;
 }
 
-.lightbox__img>img{
+.slider__img>img{
     width: 100%;
     height: 100%;
-}
-
-.lightbox__menu{
-    width: 100%;
-}
-
-.lightbox__menu > img{
-    height: 88px;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-.lightbox__menu>img:hover{
-   opacity: 0.75;
-}
-
-.imageActive{
-    opacity: 0.75;
-    outline: 2px solid #FF7E1B;
-}
-
-.lightbox__menu > img:not(:last-child){
-    margin-right: 31px;
-}
-
-.lightBoxDisplay{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    background-color: rgba(0, 0, 0, 0.75);
-}
-
-.showLightBox{
-    position: relative;
-    width: 550px;
-    height: 722px;
-}
-
-.setImage>img{
-    width: 100%;  
-    margin-bottom: 40px;
-}
-
-.imagesNav{
-    width: 445px;
-    margin: 0 auto;
-}
-
-.cross{
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    right: 0;
-    top: -44px;
-    cursor: pointer;
-}
-
-.cross:hover  *{
-    fill:#FF7E1B;
-}
-
-.buttonOfLightbox{
-    position: absolute;
-    cursor: pointer;
-    top: 303px;
-    transform: translate(-50%,-100%) rotate(180deg);
-}
-
-.stroke:hover path{
-    stroke: #FF7E1B;
 }
 
