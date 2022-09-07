@@ -9,7 +9,7 @@ export default class Homepage extends PureComponent {
     return (
       <div className={style.content}>
         <>
-          <Slider {...this.props}/> 
+          <Slider /> 
         </>
         <>
           <UserBox  {...this.props}/> 
