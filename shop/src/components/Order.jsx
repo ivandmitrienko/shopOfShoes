@@ -12,7 +12,7 @@ export default class Order extends PureComponent {
           <span>{this.props.quantity}</span>
           <button onClick={this.props.setMore}>+</button>
         </div>
-        <button className={style.buttonOfCart}>
+        <button className={style.buttonOfCart} onClick={this.props.addCartItems}>
           <img src="./images/Shape.svg" alt="" />
           <span>Add to cart</span>
         </button>

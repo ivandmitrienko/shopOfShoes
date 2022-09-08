@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
+import CartMenu from './CartMenu';
 import style from './Cart.module.css';
 
 export default class Cart extends PureComponent {
@@ -34,19 +35,14 @@ export default class Cart extends PureComponent {
                     onMouseEnter={this.setMenu}
                     onMouseLeave={this.setTimer}
                 />
-                {this.props.quantity ? <div className={style.quantity}>{this.props.quantity}</div> : null}
+                {this.props.cartItems && this.props.quantity ? <div className={style.quantity}>{this.props.quantity}</div> : null}
                 {this.state.menu && <div
                     className={style.cart__menu}
                     onMouseEnter={this.closeTimer}
                     onMouseLeave={this.setTimer}
                     style={{ cursor: 'pointer' }}
                 >
-                    <div className={style.cart__header}>
-                        Cart
-                    </div>
-                    <div className={style.cart__order}>
-                        <div className={style.cart__empty}><>Your cart is empty.</></div>
-                    </div>
+                    <CartMenu {...this.props} />
                 </div>}
             </div>
         )

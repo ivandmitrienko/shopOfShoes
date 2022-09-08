@@ -14,20 +14,6 @@
     border-radius: 10px;
 }
 
-.cart__header{
-    padding: 24px 0 0 24px;
-    font-family: 'KumbhSans-Bold';
-    color: #1D2026;
-    font-size: 16px;
-    height: 68px;
-    border-bottom: 1px solid  #E4E9F2;
-}
-
-.cart__order{
-    height: 188px;
-    
-}
-
 .quantity{
     position: absolute;
     display: flex;
@@ -43,15 +29,5 @@
     border-radius: 6.5px;
     font-size: 10px;
     color: #FFFFFF;
-}
-
-.cart__empty{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 16px;
-    color: #69707D;
 }
 

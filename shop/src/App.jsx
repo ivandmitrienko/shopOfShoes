@@ -10,8 +10,13 @@ export default class App extends PureComponent {
     super(props);
     this.state = {
       quantity: 0,
+      cartItems: false,
     };
 
+  }
+
+  addCartItems = () => {
+    this.setState({cartItems:true})
   }
 
   setLess = () => {
@@ -31,13 +36,15 @@ export default class App extends PureComponent {
             path="/"
             element={<Layout
               quantity={this.state.quantity}
+              cartItems={this.state.cartItems}
             />}>
             <Route index
               element={<Homepage
                 quantity={this.state.quantity}
                 setLess={this.setLess}
                 setMore={this.setMore}
-
+                addCartItems={this.addCartItems}
+                cartItems={this.state.cartItems}
               />}
             />
             <Route path="/Collections" element={<h1>not available</h1>} />
