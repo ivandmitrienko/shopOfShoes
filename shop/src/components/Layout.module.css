@@ -41,5 +41,9 @@
    border-bottom: 4px solid #FF7E1B;
 }
 
-
+.header__menu__right>img:hover{
+    outline: 2px solid #FF7E1B;
+    border-radius: 50%;
+    cursor: pointer;
+}
 

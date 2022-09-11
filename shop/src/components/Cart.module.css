@@ -2,6 +2,10 @@
     position: relative;
 }
 
+.cartIcon:hover{
+    fill: #000;
+}
+
 .cart__menu{
     display: block;
     position: absolute;

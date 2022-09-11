@@ -11,20 +11,25 @@ export default class App extends PureComponent {
     this.state = {
       quantity: 0,
       quantityItems:0,
+      cartItem:null,
     };
 
   }
 
+  deleteItem=()=>{
+    this.setState({ quantityItems: 0});
+  }
+
   addCartItems = () => {
     if (this.state.quantity)
-      this.setState({ quantityItems: this.state.quantity })
+      this.setState({ quantityItems: this.state.quantity, cartItem:[{src:'images/Rectangle.svg', id: 0, name:'sneakers'}]});
   }
 
   setLess = () => {
     if (this.state.quantity)
       this.setState({
         quantity: this.state.quantity - 1,
-      })
+      });
   }
 
   setMore = () => {
@@ -41,13 +46,15 @@ export default class App extends PureComponent {
             path="/"
             element={<Layout
               quantityItems={this.state.quantityItems}
+              cartItem={this.state.cartItem}
+              deleteItem={this.deleteItem}
             />}>
             <Route index
               element={<Homepage
                 quantity={this.state.quantity}
                 setLess={this.setLess}
                 setMore={this.setMore}
-                addCartItems={this.addCartItems}
+                handleClick={this.addCartItems}
               />}
             />
             <Route path="/Collections" element={<h1>not available</h1>} />

@@ -29,6 +29,7 @@ export default class Cart extends PureComponent {
         return (
             <div className={style.cart} >
                 <AiOutlineShoppingCart
+                    className={style.cartIcon}
                     size={25}
                     color='#69707D'
                     style={{ marginRight: '46px', cursor: 'pointer' }}
@@ -42,7 +43,7 @@ export default class Cart extends PureComponent {
                     onMouseLeave={this.setTimer}
                     style={{ cursor: 'pointer' }}
                 >
-                    <CartMenu quantityItems={this.props.quantityItems} />
+                    <CartMenu {...this.props} />
                 </div>}
             </div>
         )

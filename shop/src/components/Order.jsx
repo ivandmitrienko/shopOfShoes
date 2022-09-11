@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import Button from './Button';
 import style from './order.module.css';
 
 export default class Order extends PureComponent {
@@ -11,11 +12,10 @@ export default class Order extends PureComponent {
           <button onClick={this.props.setLess}>-</button>
           <span>{this.props.quantity}</span>
           <button onClick={this.props.setMore}>+</button>
-        </div>
-        <button className={style.buttonOfCart} onClick={this.props.addCartItems}>
-          <img src="./images/Shape.svg" alt="" />
+        </div>    
+        <Button handleClick={this.props.handleClick}>
           <span>Add to cart</span>
-        </button>
+        </Button>
       </div>
     )
   }
