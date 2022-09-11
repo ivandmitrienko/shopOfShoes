@@ -10,8 +10,6 @@ export default class Layout extends PureComponent {
 
   render() {
 
-    const { quantity, cartItems } = this.props;
-
     return (
       <>
         <div className={style.header}>
@@ -27,7 +25,7 @@ export default class Layout extends PureComponent {
               </div>
             </div>
             <div className={style.header__menu__right}>
-              <Cart quantity={quantity} cartItems={cartItems}/>
+              <Cart {...this.props}/>
               <img src="images/Oval.svg" alt="" />
             </div>
           </div>

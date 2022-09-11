@@ -35,14 +35,14 @@ export default class Cart extends PureComponent {
                     onMouseEnter={this.setMenu}
                     onMouseLeave={this.setTimer}
                 />
-                {this.props.cartItems && this.props.quantity ? <div className={style.quantity}>{this.props.quantity}</div> : null}
+                {this.props.quantityItems ? <div className={style.quantity}>{this.props.quantityItems}</div> : null}
                 {this.state.menu && <div
                     className={style.cart__menu}
                     onMouseEnter={this.closeTimer}
                     onMouseLeave={this.setTimer}
                     style={{ cursor: 'pointer' }}
                 >
-                    <CartMenu {...this.props} />
+                    <CartMenu quantityItems={this.props.quantityItems} />
                 </div>}
             </div>
         )

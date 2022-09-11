@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import CartOrder from './CartOrder';
 import style from './CartMenu.module.css';
 
 export default class CartMenu extends PureComponent {
@@ -9,7 +10,7 @@ export default class CartMenu extends PureComponent {
                     Cart
                 </div>
                 <div className={style.cart__order}>
-                   { this.props.cartItems&&this.props.quantity? <div>dddd</div>:<div className={style.cart__empty}><>Your cart is empty.</></div>}
+                   { this.props.quantityItems? <CartOrder />:<div className={style.cart__empty}><>Your cart is empty.</></div>}
                 </div>
             </>
         )
