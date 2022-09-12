@@ -15,8 +15,8 @@ export default class Cart__Order extends PureComponent {
   render() {
     return (
       <div>
-        {this.props.quantityItems&& <div className={style.CardOrder}>
-         <div className={style.CardOrder__description}>
+        <div className={style.CardOrder}>
+          <div className={style.CardOrder__description}>
             <img src={`${this.props.cartItem[0].src}`} alt="" />
             <div className={style.description}>
               <div style={{ marginBottom: '10px' }}>Fall Limited Edition Sneakers</div>
@@ -26,7 +26,7 @@ export default class Cart__Order extends PureComponent {
               </div>
             </div>
             <div className={style.Basket}>
-              <Basket onClick={this.props.deleteItem}/>
+              <Basket onClick={this.props.deleteItem} />
             </div>
           </div>
           <div className={style.Button}>
@@ -34,7 +34,7 @@ export default class Cart__Order extends PureComponent {
               <span>Checkout</span>
             </Button>
           </div>
-        </div>}
+        </div>
       </div>
     )
   }
