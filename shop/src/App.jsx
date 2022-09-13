@@ -9,20 +9,26 @@ export default class App extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      quantity: 0,
-      quantityItems:0,
-      cartItem:null,
+      cartItem: [],
+      quantityItems: 0,
+      quantity:0,
     };
 
   }
 
-  deleteItem=()=>{
-    this.setState({ quantityItems: 0});
+  deleteItem = () => {
+    //-----------------------for more items-------------------------//
+    // const itemIndex = this.state.cartItem.findIndex(item=>item.id === find.id);
+    // console.log(itemIndex);
+    this.setState({ quantityItems: 0 });
   }
 
   addCartItems = () => {
     if (this.state.quantity)
-      this.setState({ quantityItems: this.state.quantity, cartItem:[{src:'images/Rectangle.svg', id: 0, name:'sneakers'}]});
+      this.setState({
+        quantityItems: this.state.quantity,
+        cartItem: [...this.state.cartItem, { src: 'images/Rectangle.svg', id: 0, name: 'sneakers' }]
+      });
   }
 
   setLess = () => {
@@ -46,8 +52,8 @@ export default class App extends PureComponent {
             path="/"
             element={<Layout
               quantityItems={this.state.quantityItems}
-              cartItem={this.state.cartItem}
               deleteItem={this.deleteItem}
+              cartItem={this.state.cartItem}
             />}>
             <Route index
               element={<Homepage
