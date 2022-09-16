@@ -1,6 +1,16 @@
 .cart{
     position: relative;
 }
+.cartIcon{
+    margin-right: 46px; 
+    cursor: 'pointer'
+}
+
+@media screen {
+    .cartIcon{
+        margin-right: 22px;   
+    }
+}
 
 .cartIcon:hover{
     fill: #000;

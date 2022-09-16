@@ -32,7 +32,6 @@ export default class Cart extends PureComponent {
                     className={style.cartIcon}
                     size={25}
                     color='#69707D'
-                    style={{ marginRight: '46px', cursor: 'pointer' }}
                     onMouseEnter={this.setMenu}
                     onMouseLeave={this.setTimer}
                 />

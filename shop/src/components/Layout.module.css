@@ -48,6 +48,7 @@
 
     .header__menu{
         display: flex;
+        justify-content: space-around;
         height: 24px;
        
     }
@@ -57,7 +58,10 @@
         width: 137.5px;
     }
 
-   
+    .header__menu__left>img{
+      position: absolute;
+      left: 80px;
+    }
 }     
 
 .header__menu__left__links>a:not(:last-child){
