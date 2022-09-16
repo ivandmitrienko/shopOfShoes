@@ -2,5 +2,11 @@
   height: 740px;
   width: 1110px;
   margin: 28px auto 132px;
+}
 
+@media screen and (max-width: 600px)  {
+  .App{
+    width: 100vw;
+    height: 100vh;
+  }
 }

@@ -14,3 +14,19 @@
     height: 100%;
 }
 
+@media screen and (max-width:600px) {
+    .slider{
+        display: none;
+    }
+    .Lightbox__mobile{
+        display: block;
+    }
+}
+
+@media screen and (min-width:601px) {
+    .Lightbox__mobile{
+        width: 100vw;
+        display: none;
+        height: 300px;
+    }
+}

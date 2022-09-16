@@ -21,18 +21,26 @@ export default class Slider extends PureComponent {
 
   render() {
     return (
-      <div className={style.slider}>
-        <div className={style.slider__img}>
-          {<img src={images[this.state.activeImg]} alt='' onClick={this.setLightBox} />}
+      <>
+        <div className={style.slider}>
+          <div className={style.slider__img}>
+            {<img src={images[this.state.activeImg]} alt='' onClick={this.setLightBox} />}
+          </div>
+          <ImagesNav images={images} activeImg={this.state.activeImg} setImage = {this.setImage}/>
+          {this.state.lightBoxDisplay &&
+            <Lightbox
+              images={images}
+              setLightBox={this.setLightBox}
+              activeImg={this.state.activeImg}
+            />}
         </div>
-        <ImagesNav images={images} activeImg={this.state.activeImg} setImage = {this.setImage}/>
-        {this.state.lightBoxDisplay &&
-          <Lightbox
-            images={images}
-            setLightBox={this.setLightBox}
-            activeImg={this.state.activeImg}
-          />}
-      </div>
+        <div className={style.Lightbox__mobile}>
+        <Lightbox
+          images={images}
+          activeImg={this.state.activeImg}
+        />
+        </div>
+      </>
     )
   }
 }

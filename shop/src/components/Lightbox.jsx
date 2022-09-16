@@ -37,7 +37,7 @@ export default class Lightbox extends PureComponent {
                     <div className={style.setImage}>
                         <div className={style.cross}><Cross fill='#FFFFFF' onClick={this.props.setLightBox} /></div>
                         <div className={style.buttonOfLightbox}><Button className={style.stroke} onClick={this.LeftNextImage} /></div>
-                        <div className={style.buttonOfLightbox} style={{ left: '100%', transform: 'translate(-50%,-100%) rotate(0deg)' }}>
+                        <div className={style.buttonOfLightboxRight}>
                             <Button className={style.stroke} onClick={this.RightNextImage} />
                         </div>
                         {setImage}

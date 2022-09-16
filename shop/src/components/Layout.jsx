@@ -14,6 +14,13 @@ export default class Layout extends PureComponent {
       <>
         <div className={style.header}>
           <div className={style.header__menu}>
+            <nav>
+              <div className={style.burger__menu}>
+                <div className={style.burger__bar}></div>
+                <div className={style.burger__bar}></div>
+                <div className={style.burger__bar}></div>
+              </div>
+            </nav>
             <div className={style.header__menu__left}>
               <img src="images/sneakers 2.svg" alt="sneakers" />
               <div className={style.header__menu__left__links}>
@@ -25,7 +32,7 @@ export default class Layout extends PureComponent {
               </div>
             </div>
             <div className={style.header__menu__right}>
-              <Cart {...this.props}/>
+              <Cart {...this.props} />
               <img src="images/Oval.svg" alt="" />
             </div>
           </div>
