@@ -27,3 +27,13 @@
     cursor: pointer;
 }
 
+@media screen and (max-width:600px){
+    .order{
+        display: block;
+    }
+
+    .quantity{
+        width: 100%;
+        margin-bottom: 16px;
+    }
+}

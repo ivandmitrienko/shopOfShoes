@@ -34,6 +34,7 @@ export default class Cart extends PureComponent {
                     color='#69707D'
                     onMouseEnter={this.setMenu}
                     onMouseLeave={this.setTimer}
+                    onClick={this.setMenu}//for mobile
                 />
                 {this.props.quantityItems ? <div className={style.quantity}>{this.props.quantityItems}</div> : null}
                 {this.state.menu && <div

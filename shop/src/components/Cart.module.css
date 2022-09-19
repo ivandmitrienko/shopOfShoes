@@ -45,3 +45,11 @@
     color: #FFFFFF;
 }
 
+@media screen and (max-width:600px){
+    .cart__menu{
+        z-index: 2;
+        right: -68px;
+        top: 62px;
+        width: 92vw;
+    } 
+}

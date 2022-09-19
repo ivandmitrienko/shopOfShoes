@@ -31,9 +31,30 @@
     font-size: 15px;
     text-decoration: none;
     padding-bottom: 7.2%;     
+}     
+
+.header__menu__left__links>a:not(:last-child){
+   margin-right: 33px;
 }
 
-@media screen and (max-width: 600px)  {
+.header__menu__left__links>a:hover{
+   border-bottom: 4px solid #FF7E1B;
+}
+
+.header__menu__right>img:hover{
+    outline: 2px solid #FF7E1B;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+nav{
+    display: none;
+}
+
+
+
+@media screen and (max-width:600px){
+
     .header__menu__left__links{
         display: none;
     }
@@ -62,35 +83,66 @@
       position: absolute;
       left: 80px;
     }
-}     
 
-.header__menu__left__links>a:not(:last-child){
-   margin-right: 33px;
-}
+    nav{
+        display: block;
+        z-index: 2;
+    }
+    .burger__menu{
+        height: 1em;
+        width: 1em;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        cursor: pointer;
+    }
+    
+    .burger__bar, .burger__bar__active{
+        width: 100%;
+        height: 0.2em;
+        background-color: #69707D;
+        border-radius: 0.2em;
+    }
 
-.header__menu__left__links>a:hover{
-   border-bottom: 4px solid #FF7E1B;
-}
+    .burger__bar{
+        transform: translate(0) rotate(0);
+        transition: cubic-bezier(0.4, 0.25, 0.9, 0.9) 0.5s;
+    }
 
-.header__menu__right>img:hover{
-    outline: 2px solid #FF7E1B;
-    border-radius: 50%;
-    cursor: pointer;
-}
+    .header__menu__left__links__active{
+        display: flex;
+        flex-direction: column; 
+        position: fixed;
+        padding: 50px 0 0 38px;
+        width: 70vw;
+        top: 0;
+        left: 0;
+        background-color:white;
+        height: 100vh;
+        z-index: 1;
+        
+    }
 
-.burger__menu{
-    height: 1em;
-    width: 1em;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
-    cursor: pointer;
-}
+    .header__menu__left__links__active>a{
+        padding-top: 30px;
+        text-decoration: none; 
+        font-size: 18px;
+    }
 
-.burger__bar{
-    width: 100%;
-    height: 0.2em;
-    background-color: #69707D;
-    border-radius: 0.2em;
+    .burger__bar__active:nth-child(1){
+        transform: rotate(45deg) translate(0.39em, 0em);
+        transition: ease-out 0.5s;
+    }
+
+    .burger__bar__active:nth-child(2){
+        transform: scale(0.1);
+        transition: ease-out 0.5s;
+    }
+
+    .burger__bar__active:nth-child(3){
+        transform: rotate(135deg) translate(-0.6em, 0.2em);
+        transition: ease-out 0.5s;
+    }
+      
 }
