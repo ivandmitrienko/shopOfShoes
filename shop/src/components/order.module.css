@@ -1,0 +1,39 @@
+.order{
+    margin-top: 20px;
+    height: 56px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.quantity{
+    width: 157px;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 10px;
+    background: #F6F8FD;
+}
+
+.quantity *{
+    font-family: 'KumbhSans-Bold';
+    background: #F6F8FD;
+}
+
+.quantity button{
+    font-size: 24px;
+    border: none;
+    color: #FF7E1B;
+    cursor: pointer;
+}
+
+@media screen and (max-width:600px){
+    .order{
+        display: block;
+    }
+
+    .quantity{
+        width: 100%;
+        margin-bottom: 16px;
+    }
+}

@@ -1,0 +1,106 @@
+.imageActive{
+    opacity: 0.75;
+    outline: 2px solid #FF7E1B;
+}
+
+.lightBoxDisplay{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+.showLightBox{
+    position: relative;
+    width: 550px;
+    height: 722px;
+}
+
+.setImage>img{
+    width: 100%;  
+    margin-bottom: 40px;
+}
+
+.imagesNav{
+    width: 445px;
+    margin: 0 auto;
+}
+
+.cross{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: 0;
+    top: -44px;
+    cursor: pointer;
+}
+
+.cross:hover  *{
+    fill:#FF7E1B;
+}
+
+.buttonOfLightbox{
+    position: absolute;
+    cursor: pointer;
+    top: 303px;
+    transform: translate(-50%,-100%) rotate(180deg);
+}
+
+.buttonOfLightboxRight{
+    position: absolute;
+    left: 95%;
+    cursor: pointer;
+    top: 306px;
+    transform: translate(-50%,-100%);
+}
+
+.stroke:hover path{
+    stroke: #FF7E1B;
+}
+
+@media screen and (max-width:600px){
+    .lightBoxDisplay{
+        height: 300px;
+        display: block;
+        position: relative;
+        background-color:white;     
+    }  
+    
+    .showLightBox{
+        width: 100%;
+        height: 300px;
+    } 
+    
+    .setImage{
+    position: relative;
+       width: 100%;
+       height: 300px;
+    } 
+
+    .setImage>img{
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;   
+        object-position: 0 25%;
+    } 
+
+    .imagesNav, .cross{
+        display: none;
+    }
+
+    .buttonOfLightbox{
+        top: 166px;
+        transform: translate(35%,-100%) rotate(180deg);
+    }
+
+    .buttonOfLightboxRight{
+        top: 172px;
+        transform: translate(-90%,-100%);
+    }
+}

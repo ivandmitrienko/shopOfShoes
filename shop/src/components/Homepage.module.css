@@ -1,0 +1,14 @@
+.content{
+    display: flex;
+    width: 1015px;
+    height: 565px;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 600px) { 
+    .content{
+        display: block;
+        width: 100vw; 
+        height: initial;
+    }
+}

@@ -1,0 +1,22 @@
+.slider__menu{
+    width: 100%;
+}
+
+.slider__menu > img{
+    height: 88px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.slider__menu>img:hover{
+   opacity: 0.75;
+}
+
+.slider__menu > img:not(:last-child){
+    margin-right: 31px;
+}
+
+.imageActive{
+    opacity: 0.75;
+    outline: 2px solid #FF7E1B;
+}
